@@ -2,22 +2,39 @@
   <div id="app">
     <Header />
        
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-3 main">
           <div class="row">
-            <div class="col-sm-3 cat-container">
-              <h4>Categories</h4>
+            <div class="col-sm-3 cat-div">
+              <ul class="list-group li-div">
+                <li class="list-group-item active">Categories</li>
+              </ul>  
               <Categories v-for="cart in categories" :carts="cart" :key="cart.id" />
             </div>
-            
-            <div class="col-lg-9 ">
-              <h2>Shop now</h2>
-                <Products :product="item" v-for="item in products" :key="item.id"/>
+            <div class="col-lg-6 carousel-div">
+              <Carousel :caro="imageCarousel"/>
+            </div>
+            <div class="col-lg-3 mt-3">
+              <div class="card">
+                <div class="card-header">
+                  50% Discounts Hurry!
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Special packages</h5>
+                  <p class="card-text">With touch N' carry your gadgets are assured and reliable, get started.</p>
+                  <a href="#" class="btn btn-primary">for more info</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-    
 
-    
+        <div class="container mt-4 product-div">
+          <div class="shop-now">
+            <h2>Shop now</h2>
+          </div>
+                <Products :product="item" v-for="item in products" :key="item.id"/>
+        </div>
+  
   </div>
 </template>
 
@@ -26,6 +43,8 @@
 import Header from "./components/Header"
 import Categories from "./components/Categories"
 import Products from "./components/Products"
+// import { Carousel, Slide } from 'vue-carousel'
+import Carousel from "./components/Carousel"
 
 
 export default {
@@ -34,6 +53,20 @@ export default {
   data(){
 
         return {
+
+          imageCarousel : [
+            {
+            imageDisplay: require("./assets/carousel/caro1.jpg")
+          },
+           {
+            imageDisplay: require("./assets/carousel/caro2.jpg")
+          },
+           {
+            imageDisplay: require("./assets/carousel/caro3.jpg")
+          }
+
+          ],
+
             categories: [
             {
             id: 1,
@@ -126,7 +159,9 @@ export default {
   components: {
    Header,
    Categories,
-   Products
+   Products,
+   Carousel,
+  //  Slide
   }
 }
 </script>
@@ -142,10 +177,28 @@ export default {
 
 h2, h4{
   text-align: center;
+  
+}
+.li-div{
+  width: 90%;
+  text-align: center;
   font-weight: bold;
+  margin-top: 10px;
 }
 
-.cat-container{
-  margin-top: 50px;
+.shop-now{
+  
+  padding: 5px;
+  margin: 0;
+  background-color: #2c3e50;
+  color: #fff;
 }
+
+.box{
+  border-radius: 10px;
+  
+  margin: 10px;
+}
+
+
 </style>
