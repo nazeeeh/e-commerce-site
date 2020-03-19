@@ -34,7 +34,7 @@
           </div>
                 <Products :product="item" v-for="item in products" :key="item.id"/>
         </div>
-  
+        <Footer />
   </div>
 </template>
 
@@ -43,6 +43,7 @@
 import Header from "./components/Header"
 import Categories from "./components/Categories"
 import Products from "./components/Products"
+import Footer from "./components/Footer"
 // import { Carousel, Slide } from 'vue-carousel'
 import Carousel from "./components/Carousel"
 
@@ -161,6 +162,7 @@ export default {
    Categories,
    Products,
    Carousel,
+   Footer
   //  Slide
   }
 }
