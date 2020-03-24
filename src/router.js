@@ -16,7 +16,7 @@ const myRoutePaths = [
          component : About
     },
     {
-        path: "/product/:id",
+        path: "/product",
         name: 'product',
          component : Product
     },
