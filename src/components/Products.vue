@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{product.name}}</h5>
                 <p class="card-text">&#x20A6;{{product.price}}</p>
-                <a href="#" class="btn btn-primary">Buy now</a>
+                <a href="#" class="btn btn-primary" @click="productDetails(product.categoryId)">Buy now</a>
         </div>
 </div>
     </div>
@@ -16,6 +16,11 @@ export default {
 
     props: ['product'],
 
+   methods: {
+        productDetails(categoryId){
+            this.$router.push({name: 'product', params: {id: categoryId}})
+        }
+    },
 
 }
 </script>
