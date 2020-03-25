@@ -14,8 +14,7 @@ export default {
 <style scoped>
     .li-style{
         width: 90%;
-        margin-top: 3px;
-        text-align: center;
+        
         
         
     }

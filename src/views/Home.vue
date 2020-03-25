@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     
-        <div class="container-fluid mt-3 main">
+        <div class="container mt-3 main">
           <div class="row">
             <div class="col-sm-3 cat-div">
               <ul class="list-group li-div">
@@ -28,12 +28,51 @@
           </div>
         </div>
 
-        <div class="container mt-4 product-div">
-          <div class="shop-now">
-            <h2>Shop now</h2>
+        <div class="container mt-3 icon-container">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                <span class="i-widgets"><i class="fa fa-truck" aria-hidden="true"></i></span><h6>free Delivery</h6>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                <span class="i-widgets"><i class="fas fa-store"></i></span><h6>goods and services</h6>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-body">
+                <span class="i-widgets"><i class="fa fa-plane" aria-hidden="true"></i></span><h6>Global now</h6>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-body">
+               <span class="i-widgets"><i class="fa fa-cart-plus"></i></span><h6>Shop with us</h6>
+                </div>
+            </div>
+            </div>
           </div>
-                <Products :product="item" v-for="item in displayProducts" :key="item.id"/>
+
+          </div>
+
+        <div class="container mt-4 product-div">
+            <div class="card bg-light mt-3 mb-3">
+              <div class="card-header text-white bg-primary"><h3>Top Selling Items</h3></div>
+                <div class="card-body">
+                  <Products :product="item" v-for="item in displayProducts" :key="item.id"/>
+              </div>
+          </div>
+                
         </div>
+
+        
         <Footer />
 
         
@@ -131,18 +170,20 @@ h2, h4{
   margin-top: 10px;
 }
 
-.shop-now{
-  
-  padding: 5px;
-  margin: 0;
-  background-color: #2c3e50;
-  color: #fff;
-}
-
 .box{
   border-radius: 10px;
   
   margin: 10px;
+}
+
+.icon-container:hover{
+  cursor: pointer;
+}
+
+.i-widgets{
+  float: right;
+  border-radius: 100%;
+  color: orangered;
 }
 
 
